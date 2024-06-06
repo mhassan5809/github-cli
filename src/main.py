@@ -1,4 +1,4 @@
-import typer 
+import typer
 
 repo_app = typer.Typer()
 star_app = typer.Typer()
@@ -8,6 +8,7 @@ star_app = typer.Typer()
 def repo_list() -> None:
     print("repo list")
 
+
 @repo_app.command(name="delete")
 def repo_delete() -> None:
     print("repo delete")
@@ -16,6 +17,7 @@ def repo_delete() -> None:
 @star_app.command(name="list")
 def start_list() -> None:
     print("start list")
+
 
 @star_app.command(name="delete")
 def start_delete() -> None:
