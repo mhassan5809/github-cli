@@ -1,12 +1,30 @@
-# import typer
+import typer 
+
+repo_app = typer.Typer()
+star_app = typer.Typer()
 
 
-# def main(name: str, lastname: str, formal: bool = False) -> None:
-#     if formal:
-#         print(f"Good day Ms. {name} {lastname}.")
-#     else:
-#         print(f"Hello {name} {lastname}")
+@repo_app.command(name="list")
+def repo_list() -> None:
+    print("repo list")
+
+@repo_app.command(name="delete")
+def repo_delete() -> None:
+    print("repo delete")
 
 
-# if __name__ == "__main__":
-#     typer.run(main)
+@star_app.command(name="list")
+def start_list() -> None:
+    print("start list")
+
+@star_app.command(name="delete")
+def start_delete() -> None:
+    print("start delete")
+
+
+app = typer.Typer()
+app.add_typer(repo_app, name="repo")
+app.add_typer(star_app, name="starts")
+
+if __name__ == "__main__":
+    app()
